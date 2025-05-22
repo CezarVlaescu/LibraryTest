@@ -1,0 +1,21 @@
+:host-context(body.dark) {
+    .slide-container {
+        background-color: #272B35;
+
+        &__right-section__title,
+        &__right-section__subtitle {
+            color: #CCCCCC;
+        }
+    }
+}
+
+:host-context(body.light) {
+    .slide-container {
+        background-color: #FFFFFF;
+
+        &__right-section__title,
+        &__right-section__subtitle {
+            color: #3D3D3D;
+        }
+    }
+}

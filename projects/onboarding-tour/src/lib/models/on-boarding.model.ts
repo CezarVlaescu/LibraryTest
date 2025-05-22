@@ -3,6 +3,7 @@ export type OnBoardingContainerConfig = {
 }
 
 export type OnBoardingSlideConfig = {
+    id: number;
     title: string;
     subtitle: string;
     gifUrl: string;
@@ -12,5 +13,5 @@ export type OnBoardingSlideConfig = {
 }
 
 export type OnBoardingStepperConfig = {
-    isStartingSlide: boolean;
+    isSpecialSlide: boolean;
 }

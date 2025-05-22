@@ -1,5 +1,7 @@
-<ng-container *ngIf="config">
-    <div *ngFor="let slide of config.slidesConfiguration; let i = index">
-        <mc-onboarding-slide />
-    </div>
-</ng-container>
+@if (containerConfig()) {
+    <ng-container>
+        @for (slide of containerConfig().slidesConfiguration; track slide.id) {
+            <mc-onboarding-slide [slideConfig]="slide"/>
+        }
+    </ng-container>
+}

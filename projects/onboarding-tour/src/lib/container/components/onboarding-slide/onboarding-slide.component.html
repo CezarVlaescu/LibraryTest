@@ -1,0 +1,10 @@
+<div class="slide-container">
+    <div [class]="slideConfig().stepperConfig.isSpecialSlide ? 'special-slide-image' : 'normal-slide-image'">
+        <img [src]="slideConfig().gifUrl" alt="slide-photo">
+    </div>
+    <div class="slide-container__right-section">
+        <span class="slide-container__right-section__title">{{slideConfig().title}}</span>
+        <span class="slide-container__right-section__subtitle">{{slideConfig().subtitle}}</span>
+        <mc-onboarding-stepper />
+    </div>
+</div>

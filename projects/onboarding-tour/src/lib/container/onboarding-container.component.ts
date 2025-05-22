@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, InputSignal, input } from '@angular/core';
 import { OnBoardingContainerConfig } from '../models/on-boarding.model';
 
 @Component({
@@ -8,4 +8,5 @@ import { OnBoardingContainerConfig } from '../models/on-boarding.model';
     standalone: false
 })
 export class OnboardingContainerComponent {
+  public containerConfig: InputSignal<OnBoardingContainerConfig> = input.required<OnBoardingContainerConfig>();
 }
