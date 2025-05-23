@@ -1,10 +1,16 @@
 <div class="slide-container">
-    <div [class]="slideConfig().isSpecialSlide ? 'special-slide-image' : 'normal-slide-image'">
-        <img [src]="slideConfig().gifUrl" alt="slide-photo">
+    <div [class]="slideConfig().stepperConfig.isSpecialSlide ? 'special-slide-image' : 'normal-slide-image'">
+        <img [src]="slideConfig().gifUrl" alt="photo-gif-slide">
     </div>
     <div class="slide-container__right-section">
-        <span class="slide-container__right-section__title">{{slideConfig().title}}</span>
-        <span class="slide-container__right-section__subtitle">{{slideConfig().subtitle}}</span>
-        <mc-onboarding-stepper />
+        <div class="slide-container__right-section__closeSection">
+            <img [src]="slideConfig().closeSection.closeIcon" alt="close-icon-slide" (click)="slideConfig().closeSection.onClose()">
+            <span class="slide-container__right-section__closeSection__title">{{slideConfig().closeSection.closeText}}</span>
+        </div>
+        <div class="slide-container__right-section__stepperSection">
+            <span class="slide-container__right-section__stepperSection__title">{{slideConfig().title}}</span>
+            <span class="slide-container__right-section__stepperSection__subtitle">{{slideConfig().subtitle}}</span>
+            <mc-onboarding-stepper [stepperConfig]="slideConfig().stepperConfig"/>
+        </div>
     </div>
 </div>
