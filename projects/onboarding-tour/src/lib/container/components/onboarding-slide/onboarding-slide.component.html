@@ -1,5 +1,5 @@
 <div class="slide-container">
-    <div [class]="slideConfig().stepperConfig.isSpecialSlide ? 'special-slide-image' : 'normal-slide-image'">
+    <div [class]="slideConfig().isSpecialSlide ? 'special-slide-image' : 'normal-slide-image'">
         <img [src]="slideConfig().gifUrl" alt="slide-photo">
     </div>
     <div class="slide-container__right-section">

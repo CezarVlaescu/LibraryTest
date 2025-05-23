@@ -8,10 +8,15 @@ export type OnBoardingSlideConfig = {
     subtitle: string;
     gifUrl: string;
     isDarkMode?: boolean;
-    stepperConfig: OnBoardingStepperConfig;
     onClose: () => void;
+    isSpecialSlide?: boolean;
+    closeText: string;
+    stepperConfig: OnBoardingStepperConfig;
 }
 
 export type OnBoardingStepperConfig = {
-    isSpecialSlide: boolean;
+    nextButtonText: string;
+    previousButtonText: string;
+    buttonTheme: string;
+    buttonIcon: string;
 }
