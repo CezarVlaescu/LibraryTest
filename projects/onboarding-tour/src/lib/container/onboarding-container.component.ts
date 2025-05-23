@@ -1,5 +1,6 @@
 import { Component, InputSignal, input } from '@angular/core';
-import { OnBoardingContainerConfig } from '../models/on-boarding.model';
+import { OnBoardingContainerConfig, OnBoardingSlideConfig } from '../models/on-boarding.model';
+import processedSlidesUtil from '../utils/on-boarding.util';
 
 @Component({
     selector: 'mc-onboarding-container',
@@ -9,4 +10,8 @@ import { OnBoardingContainerConfig } from '../models/on-boarding.model';
 })
 export class OnboardingContainerComponent {
   public containerConfig: InputSignal<OnBoardingContainerConfig> = input.required<OnBoardingContainerConfig>();
+
+  public get slidesSetup(): OnBoardingSlideConfig[] {
+    return processedSlidesUtil(this.containerConfig().slidesConfiguration);
+  }
 }

@@ -1,5 +1,29 @@
-<mat-horizontal-stepper>
-    @for (step of stepIndexes; track step) {
-
+<ng-container>
+  @switch(stepperIndex()) {
+    @case (-1) {
+      <div class="stepper-start-wrapper">
+        <button (click)="startTour.emit()">Start tour</button>
+      </div>
     }
-</mat-horizontal-stepper>
+    @case (stepsCount() - 1) {
+      <div class="stepper-finish-wrapper">
+        <button (click)="back.emit()">Back</button>
+        <button (click)="finish.emit()">End tour</button>
+      </div>
+    }
+    @default {
+      <mat-horizontal-stepper [selectedIndex]="stepperIndex()" linear="false">
+        @for (step of stepIndexes; track step) {
+          <mat-step>
+            <ng-template matStepLabel></ng-template>
+          </mat-step>
+        }
+      </mat-horizontal-stepper>
+
+      <div class="stepper-controls">
+        <button (click)="back.emit()">Back</button>
+        <button (click)="next.emit()">Next</button>
+      </div>
+    }
+  }
+</ng-container>

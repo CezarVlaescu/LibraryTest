@@ -10,7 +10,11 @@
         <div class="slide-container__right-section__stepperSection">
             <span class="slide-container__right-section__stepperSection__title">{{slideConfig().title}}</span>
             <span class="slide-container__right-section__stepperSection__subtitle">{{slideConfig().subtitle}}</span>
-            <mc-onboarding-stepper [stepperConfig]="slideConfig().stepperConfig"/>
+            <mc-onboarding-stepper 
+            [stepperConfig]="slideConfig().stepperConfig"
+            [stepperIndex]="slideIndex() - 1"
+            [stepsCount]="stepsCount() - 2"
+            />
         </div>
     </div>
 </div>

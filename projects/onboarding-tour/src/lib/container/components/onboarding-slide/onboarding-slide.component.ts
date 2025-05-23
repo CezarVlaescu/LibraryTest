@@ -9,4 +9,6 @@ import { OnBoardingSlideConfig } from '../../../models/on-boarding.model';
 })
 export class OnboardingSlideComponent {
     public slideConfig: InputSignal<OnBoardingSlideConfig> = input.required<OnBoardingSlideConfig>();
+    public slideIndex: InputSignal<number> = input<number>(0);
+    public stepsCount: InputSignal<number> = input<number>(0);
 }
