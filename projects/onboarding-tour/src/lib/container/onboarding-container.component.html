@@ -2,9 +2,14 @@
     <ng-container>
         @for (slide of containerConfig().slidesConfiguration; track slide.id;) {
             <mc-onboarding-slide 
-            [slideConfig]="slide"
-            [slideIndex]="slide.id"
-            [stepsCount]="slidesSetup.length" 
+            *ngIf="currentSlideIndex() >= 0"
+            [slideConfig]="slides()[currentSlideIndex()]"
+            [slideIndex]="currentSlideIndex()"
+            [stepsCount]="slides.length"
+            (startTour)="handleStart()"
+            (next)="handleNext()"
+            (back)="handleBack()"
+            (finish)="handleFinish()" 
             />
         }
     </ng-container>
