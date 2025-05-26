@@ -2,6 +2,7 @@
 
 # Compiled output
 /dist
+!/dist/onboarding-tour/**/*
 /tmp
 /out-tsc
 /bazel-out
