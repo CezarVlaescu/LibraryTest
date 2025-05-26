@@ -3,5 +3,6 @@
   "dest": "../../dist/onboarding-tour",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": ["tslib"]
 }

@@ -9,7 +9,9 @@
     "tslib": "^2.3.0"
   },
   "sideEffects": false,
+  "main": "bundles/onboarding-tour.umd.js",
   "module": "fesm2022/onboarding-tour.mjs",
+  "es2022": "fesm2022/onboarding-tour.mjs",
   "typings": "index.d.ts",
   "exports": {
     "./package.json": {
